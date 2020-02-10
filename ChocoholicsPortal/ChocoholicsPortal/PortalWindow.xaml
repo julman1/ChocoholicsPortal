@@ -1,0 +1,13 @@
+﻿<Window x:Class="ChocoholicsPortal.PortalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChocoholicsPortal"
+        mc:Ignorable="d"
+        Title="PortalWindow" Height="370.066" Width="491.447">
+    <Grid>
+        <Label x:Name="label" Content="Logged In As: " HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top" Height="35" Width="194"/>
+
+    </Grid>
+</Window>

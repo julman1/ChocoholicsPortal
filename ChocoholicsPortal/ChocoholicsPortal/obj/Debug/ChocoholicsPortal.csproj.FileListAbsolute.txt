@@ -1,0 +1,16 @@
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\ChocoholicsPortal.exe.config
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\ChocoholicsPortal.exe
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\ChocoholicsPortal.pdb
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.csprojResolveAssemblyReference.cache
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\MainWindow.g.cs
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\App.g.cs
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal_MarkupCompile.cache
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal_MarkupCompile.lref
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\MainWindow.baml
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.g.resources
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.Properties.Resources.resources
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.csproj.GenerateResource.Cache
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.exe
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.pdb
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\PortalWindow.g.cs
+C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\PortalWindow.baml
