@@ -55,10 +55,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddMember.xaml.cs">
+      <DependentUpon>AddMember.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddServiceBilling.xaml.cs">
+      <DependentUpon>AddServiceBilling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BillingListing.xaml.cs">
+      <DependentUpon>BillingListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LookupMember.cs" />
     <Compile Include="PortalWindow.xaml.cs">
       <DependentUpon>PortalWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServiceListing.xaml.cs">
+      <DependentUpon>ServiceListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceLookup.cs" />
     <Compile Include="VerifyID.cs" />
+    <Page Include="AddMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddServiceBilling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BillingListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +98,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PortalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServiceListing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace ChocoholicsPortal
 {
-    class VerifyID
+    class LookupMember
     {
-        public bool CheckTheID(string ID)
+        public bool CheckTheMember(string ID)
         {
-            if(string.IsNullOrEmpty(ID))
+            if (string.IsNullOrEmpty(ID))
             {
                 return false;
             }
+
             //Hit the database to verify
 
             return true;
