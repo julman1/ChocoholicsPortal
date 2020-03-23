@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\
 ChocoholicsPortal
 none
 false
 DEBUG;TRACE
-C:\Users\Juliette\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\App.xaml
-2-346093607
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\App.xaml
+6-1321364462
 
-71539022011
+131172752825
 13738642453
-MainWindow.xaml;PortalWindow.xaml;
+AddMember.xaml;AddServiceBilling.xaml;BillingListing.xaml;MainWindow.xaml;PortalWindow.xaml;ServiceListing.xaml;
 
 False
 
