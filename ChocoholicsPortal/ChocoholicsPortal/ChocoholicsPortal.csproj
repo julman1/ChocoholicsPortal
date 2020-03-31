@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,33 +64,68 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddMember.xaml.cs">
-      <DependentUpon>AddMember.xaml</DependentUpon>
+    <Compile Include="AddMemberWindow.xaml.cs">
+      <DependentUpon>AddMemberWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddServiceBilling.xaml.cs">
-      <DependentUpon>AddServiceBilling.xaml</DependentUpon>
+    <Compile Include="AddServiceBillingWindow.xaml.cs">
+      <DependentUpon>AddServiceBillingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BillingListing.xaml.cs">
-      <DependentUpon>BillingListing.xaml</DependentUpon>
+    <Compile Include="AlterMemberWindow.xaml.cs">
+      <DependentUpon>AlterMemberWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LookupMember.cs" />
+    <Compile Include="BillingFunctions.cs" />
+    <Compile Include="BillingListingWindow.xaml.cs">
+      <DependentUpon>BillingListingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="bill_info.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChocanonEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChocanonEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChocanonEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChocanonEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChocanonEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberFunctions.cs" />
+    <Compile Include="member.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="PortalWindow.xaml.cs">
       <DependentUpon>PortalWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ServiceListing.xaml.cs">
-      <DependentUpon>ServiceListing.xaml</DependentUpon>
+    <Compile Include="provider.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="ServiceLookup.cs" />
-    <Compile Include="VerifyID.cs" />
-    <Page Include="AddMember.xaml">
+    <Compile Include="service.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceListingWindow.xaml.cs">
+      <DependentUpon>ServiceListingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceFunctions.cs" />
+    <Compile Include="ProviderFunctions.cs" />
+    <Page Include="AddMemberWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddServiceBilling.xaml">
+    <Page Include="AddServiceBillingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BillingListing.xaml">
+    <Page Include="AlterMemberWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BillingListingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,7 +145,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ServiceListing.xaml">
+    <Page Include="ServiceListingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +168,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="ChocanonEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ChocanonEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ChocanonEntity.edmx.diagram">
+      <DependentUpon>ChocanonEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,6 +187,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="choco.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChocanonEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChocanonEntity.Context.cs</LastGenOutput>
+      <DependentUpon>ChocanonEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="ChocanonEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ChocanonEntity.edmx</DependentUpon>
+      <LastGenOutput>ChocanonEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

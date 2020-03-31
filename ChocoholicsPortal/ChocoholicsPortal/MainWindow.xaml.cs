@@ -20,28 +20,31 @@ namespace ChocoholicsPortal
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        ProviderFunctions _providerFuncs = new ProviderFunctions();
+
         public MainWindow()
         {
             InitializeComponent();
+            IDTextbox.Focus();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //Do the login logic
-            VerifyID _idCheck = new VerifyID();
-            var goodID =_idCheck.CheckTheID(textBox.Text);
+            var goodID =_providerFuncs.CheckTheID(IDTextbox.Text);
             if(goodID)
             {
                 //Open portal
-                textBox.BorderBrush = System.Windows.Media.Brushes.Black;
+                IDTextbox.BorderBrush = System.Windows.Media.Brushes.Black;
                 //Get the User ID 
-                PortalWindow newPortal = new PortalWindow(textBox.Text);
+                PortalWindow newPortal = new PortalWindow(IDTextbox.Text);
                 newPortal.Show();
                 this.Close();
             }
             else
             {
-                textBox.BorderBrush = System.Windows.Media.Brushes.Red;
+                IDTextbox.BorderBrush = System.Windows.Media.Brushes.Red;
             }
 
         }

@@ -17,15 +17,19 @@ namespace ChocoholicsPortal
     /// <summary>
     /// Interaction logic for PortalWindow.xaml
     /// </summary>
+
     public partial class PortalWindow : Window
     {
         public string aUserID { get; set; }
+        
+        MemberFunctions _memberFuncs = new MemberFunctions();
 
         public PortalWindow(string userID)
         {
             InitializeComponent();
             aUserID = userID;
-            label.Content += userID;
+            var member = _memberFuncs.FindMember(userID);
+            label.Content += member.FirstName + " " + member.LastName;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -56,6 +60,12 @@ namespace ChocoholicsPortal
         {
             var billingWindow = new BillingListing(aUserID);
             billingWindow.Show();
+        }
+
+        private void EditMember_Click(object sender, RoutedEventArgs e)
+        {
+            var alterWindow = new AlterMemberWindow();
+            alterWindow.Show();
         }
     }
 }

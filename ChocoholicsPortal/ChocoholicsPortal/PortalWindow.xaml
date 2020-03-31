@@ -10,10 +10,11 @@
         <Label x:Name="label" Content="Logged In As: " HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top" Height="35" Width="194"/>
         <Button x:Name="button" Content="Add Billing For Service" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="129" Height="37" Click="Button_Click"/>
         <Button x:Name="button_Copy" Content="Add Member" HorizontalAlignment="Left" Margin="172,78,0,0" VerticalAlignment="Top" Width="131" Height="37" Click="Button_Copy_Click"/>
-        <Button x:Name="button_Copy1" Content="Get Service Listing" HorizontalAlignment="Left" Margin="332,78,0,0" VerticalAlignment="Top" Width="130" Height="37" Click="Button_Copy1_Click"/>
+        <Button x:Name="button_Copy1" Content="Get Service Listing" HorizontalAlignment="Left" Margin="9,207,0,0" VerticalAlignment="Top" Width="130" Height="37" Click="Button_Copy1_Click"/>
         <Button x:Name="button_Copy2" Content="Look Up Report" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="129" Height="37"/>
         <Button x:Name="button_Copy3" Content="Run AP Process" HorizontalAlignment="Left" Margin="172,145,0,0" VerticalAlignment="Top" Width="131" Height="37" Click="Button_Copy3_Click"/>
         <Button x:Name="button_Copy4" Content="Get Weekly Totals" HorizontalAlignment="Left" Margin="332,145,0,0" VerticalAlignment="Top" Width="130" Height="37" Click="Button_Copy4_Click"/>
+        <Button x:Name="EditMember" Content="Edit Member" HorizontalAlignment="Left" Margin="332,78,0,0" VerticalAlignment="Top" Width="131" Height="37" Click="EditMember_Click" />
 
     </Grid>
 </Window>

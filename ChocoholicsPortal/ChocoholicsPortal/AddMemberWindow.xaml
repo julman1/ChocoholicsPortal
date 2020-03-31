@@ -1,0 +1,30 @@
+﻿<Window x:Class="ChocoholicsPortal.AddMember"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChocoholicsPortal"
+        mc:Ignorable="d"
+        Title="AddMember" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="label" Content="Add Member" HorizontalAlignment="Left" Height="30" Margin="341,35,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="label_Copy" Content="Member First Name:" HorizontalAlignment="Left" Height="30" Margin="166,98,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy1" Content="Member Phone" HorizontalAlignment="Left" Height="30" Margin="166,155,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy2" Content="Member Email" HorizontalAlignment="Left" Height="30" Margin="166,185,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy3" Content="Member Address" HorizontalAlignment="Left" Height="30" Margin="166,220,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy4" Content="City" HorizontalAlignment="Left" Height="30" Margin="166,255,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy5" Content="State" HorizontalAlignment="Left" Height="30" Margin="166,290,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy6" Content="Zip" HorizontalAlignment="Left" Height="30" Margin="166,325,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="341,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="341,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="341,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="23" Margin="341,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="23" Margin="341,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StateTextBox" HorizontalAlignment="Left" Height="23" Margin="341,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ZipTextBox" HorizontalAlignment="Left" Height="23" Margin="341,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="341,373,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label x:Name="label_Copy7" Content="Member Last Name" HorizontalAlignment="Left" Height="30" Margin="166,128,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="341,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
