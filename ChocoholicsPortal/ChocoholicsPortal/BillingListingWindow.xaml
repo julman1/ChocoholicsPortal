@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:ChocoholicsPortal"
         mc:Ignorable="d"
         Title="BillingListing" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="label" Content="Billing Listing" HorizontalAlignment="Left" Margin="325,21,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="ServicesDataGrid" HorizontalAlignment="Left" Height="268" Margin="84,99,0,0" VerticalAlignment="Top" Width="638"/>
-        <TextBox x:Name="ProviderIDTextbox" HorizontalAlignment="Left" Height="23" Margin="249,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    <Grid Background="#FF5C7BA8">
+        <Rectangle Fill="White" Margin="10,54,10,10" Stroke="Black"/>
+
+        <Label x:Name="label" Content="Billing Listing" Margin="320,10,317,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="22" Foreground="White"/>
+        <DataGrid x:Name="ServicesDataGrid" Margin="35,117,30,23"/>
+        <TextBox x:Name="ProviderIDTextbox" Height="23" Margin="249,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <Button x:Name="button" Content="Search" HorizontalAlignment="Left" Margin="416,71,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Label x:Name="label_Copy" Content="Provider ID:" HorizontalAlignment="Left" Margin="145,67,0,0" VerticalAlignment="Top"/>
 

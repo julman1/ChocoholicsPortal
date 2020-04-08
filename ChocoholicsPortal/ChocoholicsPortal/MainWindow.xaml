@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChocoholicsPortal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Image x:Name="choco_PNG" Margin="130,10,128.4,156.8" Source="choco.PNG" Stretch="Fill"/>
-        <Label x:Name="label" Content="Login ID: " HorizontalAlignment="Left" Margin="97,202,0,0" VerticalAlignment="Top" Height="32" Width="91" RenderTransformOrigin="0.797,0.314"/>
-        <TextBox x:Name="IDTextbox" HorizontalAlignment="Left" Height="23" Margin="193,206,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="333,206,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Height="23"/>
+        Title="MainWindow" Height="248.039" Width="376.961">
+    <Grid Background="#FFD1D1D1">
+        <Rectangle Fill="#FF5C7BA8" Stroke="Black"/>
+        <Label x:Name="label" Content="Login ID: " HorizontalAlignment="Left" Margin="163,48,0,0" VerticalAlignment="Top" Height="32" Width="64" RenderTransformOrigin="0.797,0.314" Foreground="White" FontFamily="Segoe UI Semibold" FontWeight="Bold"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="137,146,0,0" VerticalAlignment="Top" Width="109" Click="button_Click" Height="23" Foreground="White" Background="#FF243C61" FontFamily="Segoe UI Semibold" FontWeight="Bold"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="137,100,0,0" VerticalAlignment="Top" Width="109" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>

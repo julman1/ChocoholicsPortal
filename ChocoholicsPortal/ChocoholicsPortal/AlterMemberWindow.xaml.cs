@@ -24,6 +24,7 @@ namespace ChocoholicsPortal
         public AlterMemberWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void FindBtn_Click(object sender, RoutedEventArgs e)

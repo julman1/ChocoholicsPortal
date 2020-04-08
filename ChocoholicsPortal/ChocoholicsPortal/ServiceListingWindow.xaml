@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:ChocoholicsPortal"
         mc:Ignorable="d"
         Title="ServiceListing" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="label" Content="Services" HorizontalAlignment="Left" Margin="128,35,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="ServiceDataGrid" HorizontalAlignment="Left" Height="275" Margin="59,106,0,0" VerticalAlignment="Top" Width="683"/>
+    <Grid Background="#FF5C7BA8">
+        <Rectangle Fill="White" Margin="10,61,10,10" Stroke="Black"/>
+
+        <Label x:Name="label" Content="Service Listing" Margin="318,17,296,0" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="22"/>
+        <DataGrid x:Name="ServiceDataGrid" Margin="59,87,50,38"/>
 
     </Grid>
 </Window>

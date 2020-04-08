@@ -22,31 +22,64 @@ namespace ChocoholicsPortal
     {
 
         ProviderFunctions _providerFuncs = new ProviderFunctions();
+        OperatorFunctions _operatorFuncs = new OperatorFunctions();
 
         public MainWindow()
         {
             InitializeComponent();
-            IDTextbox.Focus();
+            passwordBox.Focus();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //Do the login logic
-            var goodID =_providerFuncs.CheckTheID(IDTextbox.Text);
+
+            //Check if Numeric
+            try
+            {
+                var intID = Convert.ToInt32(passwordBox.Password);
+            }
+            catch
+            {
+                MessageBox.Show("Error: ID Must be Numeric.");
+                return;
+            }
+
+            //First Check if provider
+            var goodID =_providerFuncs.CheckTheID(passwordBox.Password);
             if(goodID)
             {
-                //Open portal
-                IDTextbox.BorderBrush = System.Windows.Media.Brushes.Black;
-                //Get the User ID 
-                PortalWindow newPortal = new PortalWindow(IDTextbox.Text);
-                newPortal.Show();
-                this.Close();
+                OpenPortal(true, false);
             }
             else
             {
-                IDTextbox.BorderBrush = System.Windows.Media.Brushes.Red;
+                //Then Check Operator
+                goodID = _operatorFuncs.CheckTheID(passwordBox.Password);
+                if(goodID)
+                {
+                    OpenPortal(false, _operatorFuncs.VerifyManager(passwordBox.Password));
+                }
+                else
+                {
+                    passwordBox.BorderBrush = System.Windows.Media.Brushes.Red;
+                }
             }
 
+        }
+        protected void OpenPortal(bool provider, bool manager)
+        {
+            //Open portal
+            passwordBox.BorderBrush = System.Windows.Media.Brushes.Black;
+            //Get the User ID 
+            PortalWindow newPortal = new PortalWindow(passwordBox.Password, provider, manager);
+            newPortal.Show();
+            this.Close();
+        }
+
+        private void IDTextbox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            button_Click(sender, e);
         }
     }
 }

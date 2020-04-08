@@ -39,6 +39,8 @@
     <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="service">
     <Key>
@@ -53,5 +55,15 @@
     <EntitySet Name="member" EntityType="Self.member" />
     <EntitySet Name="provider" EntityType="Self.provider" />
     <EntitySet Name="service" EntityType="Self.service" />
+    <EntitySet Name="operator" EntityType="chocanonModel.operator" />
   </EntityContainer>
+  <EntityType Name="operator">
+    <Key>
+      <PropertyRef Name="OperatorID" />
+    </Key>
+    <Property Name="OperatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsManager" Type="Boolean" />
+  </EntityType>
 </Schema>

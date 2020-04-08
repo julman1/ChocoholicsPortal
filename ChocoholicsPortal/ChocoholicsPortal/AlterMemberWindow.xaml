@@ -5,30 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChocoholicsPortal"
         mc:Ignorable="d"
-        Title="AlterMemberWindow" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="label" Content="Alter Member" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Member ID:" HorizontalAlignment="Left" Margin="216,54,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="IDTextBox" HorizontalAlignment="Left" Height="23" Margin="336,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
-        <Button x:Name="FindBtn" Content="Find" HorizontalAlignment="Left" Margin="505,60,0,0" VerticalAlignment="Top" Width="75" Click="FindBtn_Click"/>
-        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="409,379,0,0" VerticalAlignment="Top" Width="75" Click="DeleteBtn_Click"/>
-        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Left" Margin="264,379,0,0" VerticalAlignment="Top" Width="75" Click="UpdateBtn_Click"/>
-        <Label x:Name="label_Copy1" Content="Member First Name:" HorizontalAlignment="Left" Height="30" Margin="229,98,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy2" Content="Member Phone" HorizontalAlignment="Left" Height="30" Margin="229,155,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy3" Content="Member Email" HorizontalAlignment="Left" Height="30" Margin="229,185,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy4" Content="Member Address" HorizontalAlignment="Left" Height="30" Margin="229,220,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy5" Content="City" HorizontalAlignment="Left" Height="30" Margin="229,255,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy6" Content="State" HorizontalAlignment="Left" Height="30" Margin="229,290,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy7" Content="Zip" HorizontalAlignment="Left" Height="30" Margin="229,325,0,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="404,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="404,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="404,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="23" Margin="404,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="23" Margin="404,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="StateTextBox" HorizontalAlignment="Left" Height="23" Margin="404,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ZipTextBox" HorizontalAlignment="Left" Height="23" Margin="404,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy8" Content="Member Last Name" HorizontalAlignment="Left" Height="30" Margin="229,128,0,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="404,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        Title="AlterMemberWindow" Height="446.218" Width="438.235">
+    <Grid Background="#FF5C7BA8">
+        <Rectangle Fill="White" Margin="10,49,13,10" Stroke="Black"/>
+
+        <Label x:Name="label" Content="Alter Member" Margin="138,10,131,0" VerticalAlignment="Top" Foreground="White" FontSize="22" FontFamily="Segoe UI Semibold"/>
+        <Label x:Name="label_Copy" Content="Member ID:" HorizontalAlignment="Left" Margin="66,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="IDTextBox" HorizontalAlignment="Left" Height="23" Margin="153,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <Button x:Name="FindBtn" Content="Find" HorizontalAlignment="Left" Margin="286,59,0,0" VerticalAlignment="Top" Width="75" Click="FindBtn_Click"/>
+        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="241,0,0,27" VerticalAlignment="Bottom" Width="75" Click="DeleteBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Left" Margin="102,0,0,27" VerticalAlignment="Bottom" Width="75" Click="UpdateBtn_Click"/>
+        <Label x:Name="label_Copy1" Content="Member First Name:" HorizontalAlignment="Left" Height="30" Margin="66,97,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy2" Content="Member Phone" HorizontalAlignment="Left" Height="30" Margin="66,154,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy3" Content="Member Email" HorizontalAlignment="Left" Height="30" Margin="66,184,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy4" Content="Member Address" HorizontalAlignment="Left" Height="30" Margin="66,219,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy5" Content="City" HorizontalAlignment="Left" Height="30" Margin="66,254,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy6" Content="State" HorizontalAlignment="Left" Height="30" Margin="66,289,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy7" Content="Zip" HorizontalAlignment="Left" Height="30" Margin="66,324,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="231,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="231,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="231,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="23" Margin="231,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="23" Margin="231,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="StateTextBox" HorizontalAlignment="Left" Height="23" Margin="231,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="ZipTextBox" HorizontalAlignment="Left" Height="23" Margin="231,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <Label x:Name="label_Copy8" Content="Member Last Name" HorizontalAlignment="Left" Height="30" Margin="66,125,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="231,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
 
     </Grid>
 </Window>

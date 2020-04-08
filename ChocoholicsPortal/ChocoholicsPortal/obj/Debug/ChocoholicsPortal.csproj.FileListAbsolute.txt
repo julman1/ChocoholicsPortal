@@ -47,3 +47,15 @@ C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsP
 C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.csprojAssemblyReference.cache
 C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AlterMemberWindow.g.cs
 C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AlterMemberWindow.baml
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\ControlzEx.dll
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\MahApps.Metro.dll
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\ControlzEx.pdb
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\MahApps.Metro.pdb
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\bin\Debug\MahApps.Metro.xml
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AddOperatorWindow.g.cs
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AddProviderWindow.g.cs
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AlterProviderWindow.g.cs
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AddOperatorWindow.baml
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AddProviderWindow.baml
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AlterProviderWindow.baml

@@ -33,6 +33,15 @@
           <Property Name="Phone" Type="nvarchar(max)" />
           <Property Name="Email" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="operator">
+          <Key>
+            <PropertyRef Name="OperatorID" />
+          </Key>
+          <Property Name="OperatorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="IsManager" Type="bit" />
+        </EntityType>
         <EntityType Name="provider">
           <Key>
             <PropertyRef Name="ProviderID" />
@@ -44,6 +53,8 @@
           <Property Name="City" Type="nvarchar(max)" />
           <Property Name="State" Type="nvarchar(max)" />
           <Property Name="Zip" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="service">
           <Key>
@@ -56,6 +67,7 @@
         <EntityContainer Name="chocanonModelStoreContainer">
           <EntitySet Name="bill_info" EntityType="Self.bill_info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operator" EntityType="Self.operator" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="provider" EntityType="Self.provider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -102,6 +114,8 @@
           <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="service">
           <Key>
@@ -116,7 +130,17 @@
           <EntitySet Name="member" EntityType="Self.member" />
           <EntitySet Name="provider" EntityType="Self.provider" />
           <EntitySet Name="service" EntityType="Self.service" />
+          <EntitySet Name="operator" EntityType="chocanonModel.operator" />
         </EntityContainer>
+        <EntityType Name="operator">
+          <Key>
+            <PropertyRef Name="OperatorID" />
+          </Key>
+          <Property Name="OperatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsManager" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -156,6 +180,8 @@
           <EntitySetMapping Name="provider">
             <EntityTypeMapping TypeName="chocanonModel.provider">
               <MappingFragment StoreEntitySet="provider">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -172,6 +198,16 @@
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
                 <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
                 <ScalarProperty Name="ServiceCost" ColumnName="ServiceCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operator">
+            <EntityTypeMapping TypeName="chocanonModel.operator">
+              <MappingFragment StoreEntitySet="operator">
+                <ScalarProperty Name="IsManager" ColumnName="IsManager" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="OperatorID" ColumnName="OperatorID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -28,6 +28,15 @@
     <Property Name="Phone" Type="nvarchar(max)" />
     <Property Name="Email" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="operator">
+    <Key>
+      <PropertyRef Name="OperatorID" />
+    </Key>
+    <Property Name="OperatorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="IsManager" Type="bit" />
+  </EntityType>
   <EntityType Name="provider">
     <Key>
       <PropertyRef Name="ProviderID" />
@@ -39,6 +48,8 @@
     <Property Name="City" Type="nvarchar(max)" />
     <Property Name="State" Type="nvarchar(max)" />
     <Property Name="Zip" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="service">
     <Key>
@@ -51,6 +62,7 @@
   <EntityContainer Name="chocanonModelStoreContainer">
     <EntitySet Name="bill_info" EntityType="Self.bill_info" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="operator" EntityType="Self.operator" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="provider" EntityType="Self.provider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

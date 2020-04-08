@@ -5,21 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChocoholicsPortal"
         mc:Ignorable="d"
-        Title="AddServiceBilling" Height="450" Width="800">
+        Title="AddServiceBilling" Height="438.655" Width="434.454">
     <Grid>
-        <Label x:Name="label" Content="Add Billing For A Service" HorizontalAlignment="Left" Margin="319,31,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Member ID:" HorizontalAlignment="Left" Margin="232,120,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Look-up Service:" HorizontalAlignment="Left" Margin="206,170,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="memberIDTextbox" HorizontalAlignment="Left" Height="26" Margin="373,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" LostFocus="MemberIDTextbox_LostFocus"/>
-        <TextBox x:Name="serviceCodeTextbox" HorizontalAlignment="Left" Height="26" Margin="373,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="SubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="346,367,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="SubmitButton_Click"/>
-        <Label x:Name="label_Copy2" Content="Date Service Given:" HorizontalAlignment="Left" Margin="193,212,0,0" VerticalAlignment="Top"/>
-        <DatePicker Name="ServiceDatePicker"  HorizontalAlignment="Left" Margin="373,212,0,0" VerticalAlignment="Top" Height="26" Width="118"/>
-        <Label x:Name="validatedLabel" Content="Validated" HorizontalAlignment="Left" Margin="521,120,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="CommentsTextBox" HorizontalAlignment="Left" Height="64" Margin="373,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="393" LostFocus="MemberIDTextbox_LostFocus"/>
-        <Label x:Name="label_Copy3" Content="Comments:" HorizontalAlignment="Left" Margin="193,280,0,0" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="CostTextbox" HorizontalAlignment="Left" Height="26" Margin="371,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Expected Cost:" HorizontalAlignment="Left" Margin="217,249,0,0" VerticalAlignment="Top"/>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF5C7BA8"/>
+        </Grid.Background>
+        <Rectangle Fill="White" Height="346" Margin="10,52,10,0" Stroke="Black" VerticalAlignment="Top"/>
+
+        <Label x:Name="label" Content="Add Billing For A Service" Margin="87,13,73,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="22" Foreground="White"/>
+        <Label x:Name="label_Copy" Content="Member ID:" HorizontalAlignment="Left" Margin="49,94,0,0" VerticalAlignment="Top" Width="111"/>
+        <Label x:Name="label_Copy1" Content="Look-up Service:" HorizontalAlignment="Left" Margin="49,144,0,0" VerticalAlignment="Top" Width="111"/>
+        <TextBox x:Name="memberIDTextbox" Height="26" Margin="181,94,125,0" TextWrapping="Wrap" VerticalAlignment="Top" LostFocus="MemberIDTextbox_LostFocus"/>
+        <TextBox x:Name="serviceCodeTextbox" Height="26" Margin="181,144,125,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="SubmitButton" Content="Submit" Margin="181,0,170,20" VerticalAlignment="Bottom" Height="26" Click="SubmitButton_Click"/>
+        <Label x:Name="label_Copy2" Content="Date Service Given:" HorizontalAlignment="Left" Margin="49,186,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="ServiceDatePicker" Margin="181,186,127,0" VerticalAlignment="Top" Height="26"/>
+        <Label x:Name="validatedLabel" Content="Validated" HorizontalAlignment="Right" Margin="0,94,38,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CommentsTextBox" Margin="181,264,38,66" TextWrapping="Wrap" LostFocus="MemberIDTextbox_LostFocus"/>
+        <Label x:Name="label_Copy3" Content="Comments:" HorizontalAlignment="Left" Margin="49,254,0,0" VerticalAlignment="Top" Width="111"/>
+        <TextBox x:Name="CostTextbox" Height="26" Margin="181,223,125,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Expected Cost:" HorizontalAlignment="Left" Margin="49,223,0,0" VerticalAlignment="Top" Width="111"/>
 
     </Grid>
 </Window>

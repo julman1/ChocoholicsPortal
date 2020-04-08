@@ -29,6 +29,7 @@ namespace ChocoholicsPortal
             //Fill the data grid
             var intID = Convert.ToInt32(ID);
             ServicesDataGrid.ItemsSource = billFuncs.GetBillingInfo(intID);
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

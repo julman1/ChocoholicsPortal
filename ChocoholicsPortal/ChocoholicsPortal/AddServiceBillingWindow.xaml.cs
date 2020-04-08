@@ -28,6 +28,7 @@ namespace ChocoholicsPortal
             ProviderID = userID;
             ServiceDatePicker.SelectedDate = DateTime.Now.Date;
             validatedLabel.Visibility = Visibility.Visible;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -100,6 +101,10 @@ namespace ChocoholicsPortal
             if (goodID != "OK")
             {
                 memberIDTextbox.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                memberIDTextbox.BorderBrush = System.Windows.Media.Brushes.Black;
             }
         }
     }

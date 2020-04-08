@@ -25,6 +25,7 @@ namespace ChocoholicsPortal
         {
             InitializeComponent();
             ServiceDataGrid.ItemsSource = serviceClass.ReturnAllServices();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
     }
 }

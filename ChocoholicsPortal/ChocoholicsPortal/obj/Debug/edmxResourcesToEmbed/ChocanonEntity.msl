@@ -34,6 +34,8 @@
     <EntitySetMapping Name="provider">
       <EntityTypeMapping TypeName="chocanonModel.provider">
         <MappingFragment StoreEntitySet="provider">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -50,6 +52,16 @@
           <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
           <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
           <ScalarProperty Name="ServiceCost" ColumnName="ServiceCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operator">
+      <EntityTypeMapping TypeName="chocanonModel.operator">
+        <MappingFragment StoreEntitySet="operator">
+          <ScalarProperty Name="IsManager" ColumnName="IsManager" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="OperatorID" ColumnName="OperatorID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

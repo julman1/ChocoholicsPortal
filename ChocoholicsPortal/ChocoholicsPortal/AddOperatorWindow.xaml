@@ -1,0 +1,21 @@
+﻿<Window x:Class="ChocoholicsPortal.AddOperatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChocoholicsPortal"
+        mc:Ignorable="d"
+        Title="AddMember" Height="298.936" Width="543.801">
+    <Grid Background="#FF5C7BA8">
+        <Rectangle Fill="White" Margin="44,70,29,10" Stroke="Black"/>
+        <Label x:Name="label" Content="Add Operator" Height="44" Margin="206,21,166,0" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="22"/>
+        <Label x:Name="label_Copy" Content="Operator First Name:" HorizontalAlignment="Left" Height="30" Margin="157,97,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Add" Margin="250,0,216,35" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <Label x:Name="label_Copy7" Content="Operator Last Name" HorizontalAlignment="Left" Height="30" Margin="157,127,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy1" Content="Is Manager?" HorizontalAlignment="Left" Height="30" Margin="157,157,0,0" VerticalAlignment="Top" Width="125"/>
+        <CheckBox x:Name="checkBox" Content="" HorizontalAlignment="Left" Margin="292,163,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

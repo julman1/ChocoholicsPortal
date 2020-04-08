@@ -29,5 +29,6 @@ namespace ChocoholicsPortal
         public virtual DbSet<member> member { get; set; }
         public virtual DbSet<provider> provider { get; set; }
         public virtual DbSet<service> service { get; set; }
+        public virtual DbSet<@operator> @operator { get; set; }
     }
 }
