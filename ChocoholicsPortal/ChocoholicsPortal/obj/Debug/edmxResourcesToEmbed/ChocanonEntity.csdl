@@ -1,5 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="chocanonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="chocanonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="chocanonModel.sysdiagrams" />
+    <EntitySet Name="ap_period" EntityType="chocanonModel.ap_period" />
+    <EntitySet Name="bill_info" EntityType="chocanonModel.bill_info" />
+    <EntitySet Name="eft" EntityType="chocanonModel.eft" />
+    <EntitySet Name="member" EntityType="chocanonModel.member" />
+    <EntitySet Name="operator" EntityType="chocanonModel.operator" />
+    <EntitySet Name="provider" EntityType="chocanonModel.provider" />
+    <EntitySet Name="service" EntityType="chocanonModel.service" />
+    <AssociationSet Name="FK_bill_info_member" Association="chocanonModel.FK_bill_info_member">
+      <End Role="member" EntitySet="member" />
+      <End Role="bill_info" EntitySet="bill_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bill_info_provider" Association="chocanonModel.FK_bill_info_provider">
+      <End Role="provider" EntitySet="provider" />
+      <End Role="bill_info" EntitySet="bill_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bill_info_service" Association="chocanonModel.FK_bill_info_service">
+      <End Role="service" EntitySet="service" />
+      <End Role="bill_info" EntitySet="bill_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eft_provider" Association="chocanonModel.FK_eft_provider">
+      <End Role="provider" EntitySet="provider" />
+      <End Role="eft" EntitySet="eft" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ap_period">
+    <Key>
+      <PropertyRef Name="APPeriodID" />
+    </Key>
+    <Property Name="APPeriodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
   <EntityType Name="bill_info">
     <Key>
       <PropertyRef Name="BillID" />
@@ -12,6 +55,20 @@
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <Property Name="ExpectedCost" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="member" Relationship="chocanonModel.FK_bill_info_member" FromRole="bill_info" ToRole="member" />
+    <NavigationProperty Name="provider" Relationship="chocanonModel.FK_bill_info_provider" FromRole="bill_info" ToRole="provider" />
+    <NavigationProperty Name="service" Relationship="chocanonModel.FK_bill_info_service" FromRole="bill_info" ToRole="service" />
+  </EntityType>
+  <EntityType Name="eft">
+    <Key>
+      <PropertyRef Name="ProviderID" />
+      <PropertyRef Name="APPeriodID" />
+    </Key>
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="APPeriodID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="provider" Relationship="chocanonModel.FK_eft_provider" FromRole="eft" ToRole="provider" />
   </EntityType>
   <EntityType Name="member">
     <Key>
@@ -27,6 +84,16 @@
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="bill_info" Relationship="chocanonModel.FK_bill_info_member" FromRole="member" ToRole="bill_info" />
+  </EntityType>
+  <EntityType Name="operator">
+    <Key>
+      <PropertyRef Name="OperatorID" />
+    </Key>
+    <Property Name="OperatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsManager" Type="Boolean" />
   </EntityType>
   <EntityType Name="provider">
     <Key>
@@ -41,29 +108,64 @@
     <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="bill_info" Relationship="chocanonModel.FK_bill_info_provider" FromRole="provider" ToRole="bill_info" />
+    <NavigationProperty Name="eft" Relationship="chocanonModel.FK_eft_provider" FromRole="provider" ToRole="eft" />
   </EntityType>
   <EntityType Name="service">
     <Key>
       <PropertyRef Name="ServiceID" />
     </Key>
     <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ServiceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ServiceCost" Type="Double" Nullable="false" />
+    <NavigationProperty Name="bill_info" Relationship="chocanonModel.FK_bill_info_service" FromRole="service" ToRole="bill_info" />
   </EntityType>
-  <EntityContainer Name="chocanonEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="bill_info" EntityType="Self.bill_info" />
-    <EntitySet Name="member" EntityType="Self.member" />
-    <EntitySet Name="provider" EntityType="Self.provider" />
-    <EntitySet Name="service" EntityType="Self.service" />
-    <EntitySet Name="operator" EntityType="chocanonModel.operator" />
-  </EntityContainer>
-  <EntityType Name="operator">
-    <Key>
-      <PropertyRef Name="OperatorID" />
-    </Key>
-    <Property Name="OperatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="IsManager" Type="Boolean" />
-  </EntityType>
+  <Association Name="FK_bill_info_member">
+    <End Type="chocanonModel.member" Role="member" Multiplicity="0..1" />
+    <End Type="chocanonModel.bill_info" Role="bill_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="member">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="bill_info">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bill_info_provider">
+    <End Type="chocanonModel.provider" Role="provider" Multiplicity="0..1" />
+    <End Type="chocanonModel.bill_info" Role="bill_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provider">
+        <PropertyRef Name="ProviderID" />
+      </Principal>
+      <Dependent Role="bill_info">
+        <PropertyRef Name="ProviderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bill_info_service">
+    <End Type="chocanonModel.service" Role="service" Multiplicity="0..1" />
+    <End Type="chocanonModel.bill_info" Role="bill_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="bill_info">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eft_provider">
+    <End Type="chocanonModel.provider" Role="provider" Multiplicity="1" />
+    <End Type="chocanonModel.eft" Role="eft" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provider">
+        <PropertyRef Name="ProviderID" />
+      </Principal>
+      <Dependent Role="eft">
+        <PropertyRef Name="ProviderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

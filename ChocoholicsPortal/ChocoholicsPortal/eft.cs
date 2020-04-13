@@ -12,19 +12,13 @@ namespace ChocoholicsPortal
     using System;
     using System.Collections.Generic;
     
-    public partial class bill_info
+    public partial class eft
     {
-        public int BillID { get; set; }
-        public Nullable<int> ServiceID { get; set; }
-        public Nullable<int> MemberID { get; set; }
-        public Nullable<int> ProviderID { get; set; }
-        public Nullable<System.DateTime> ServiceDate { get; set; }
-        public Nullable<System.DateTime> EntryDate { get; set; }
-        public Nullable<decimal> ExpectedCost { get; set; }
-        public string Notes { get; set; }
+        public int ProviderID { get; set; }
+        public string ProviderName { get; set; }
+        public double Amount { get; set; }
+        public int APPeriodID { get; set; }
     
-        public virtual member member { get; set; }
         public virtual provider provider { get; set; }
-        public virtual service service { get; set; }
     }
 }

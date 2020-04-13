@@ -14,6 +14,12 @@ namespace ChocoholicsPortal
     
     public partial class member
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public member()
+        {
+            this.bill_info = new HashSet<bill_info>();
+        }
+    
         public int MemberID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -24,5 +30,8 @@ namespace ChocoholicsPortal
         public string Status { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<bill_info> bill_info { get; set; }
     }
 }

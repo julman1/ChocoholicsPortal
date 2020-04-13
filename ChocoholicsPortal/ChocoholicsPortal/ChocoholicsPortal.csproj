@@ -91,6 +91,10 @@
     <Compile Include="AlterMemberWindow.xaml.cs">
       <DependentUpon>AlterMemberWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="APFunctions.cs" />
+    <Compile Include="ap_period.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="BillingFunctions.cs" />
     <Compile Include="BillingListingWindow.xaml.cs">
       <DependentUpon>BillingListingWindow.xaml</DependentUpon>
@@ -112,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChocanonEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="eft.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="MemberFunctions.cs" />
     <Compile Include="member.cs">
@@ -135,6 +142,9 @@
     </Compile>
     <Compile Include="ServiceFunctions.cs" />
     <Compile Include="ProviderFunctions.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ChocanonEntity.tt</DependentUpon>
+    </Compile>
     <Page Include="AddOperatorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

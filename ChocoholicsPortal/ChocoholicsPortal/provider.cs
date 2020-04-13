@@ -14,6 +14,13 @@ namespace ChocoholicsPortal
     
     public partial class provider
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public provider()
+        {
+            this.bill_info = new HashSet<bill_info>();
+            this.eft = new HashSet<eft>();
+        }
+    
         public int ProviderID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -23,5 +30,10 @@ namespace ChocoholicsPortal
         public string Zip { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<bill_info> bill_info { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<eft> eft { get; set; }
     }
 }

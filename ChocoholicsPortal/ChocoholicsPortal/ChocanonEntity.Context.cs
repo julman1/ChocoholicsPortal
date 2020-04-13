@@ -25,10 +25,13 @@ namespace ChocoholicsPortal
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<ap_period> ap_period { get; set; }
         public virtual DbSet<bill_info> bill_info { get; set; }
+        public virtual DbSet<eft> eft { get; set; }
         public virtual DbSet<member> member { get; set; }
+        public virtual DbSet<@operator> @operator { get; set; }
         public virtual DbSet<provider> provider { get; set; }
         public virtual DbSet<service> service { get; set; }
-        public virtual DbSet<@operator> @operator { get; set; }
     }
 }

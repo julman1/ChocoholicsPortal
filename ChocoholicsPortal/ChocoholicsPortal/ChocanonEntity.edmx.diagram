@@ -4,12 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0ab41059f660401fbb934cc175b39441" Name="Diagram1">
-        <EntityTypeShape EntityType="chocanonModel.bill_info" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="chocanonModel.member" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="chocanonModel.provider" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="chocanonModel.service" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="chocanonModel.operator" Width="1.5" PointX="3.375" PointY="4.75" />
+      <Diagram DiagramId="0ab41059f660401fbb934cc175b39441" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="chocanonModel.ap_period" Width="1.5" PointX="9.125" PointY="1" />
+        <EntityTypeShape EntityType="chocanonModel.bill_info" Width="1.5" PointX="4.25" PointY="0.625" />
+        <EntityTypeShape EntityType="chocanonModel.eft" Width="1.5" PointX="7.875" PointY="3.625" />
+        <EntityTypeShape EntityType="chocanonModel.member" Width="1.5" PointX="4.5" PointY="4.75" />
+        <EntityTypeShape EntityType="chocanonModel.operator" Width="1.5" PointX="6.625" PointY="0.875" />
+        <EntityTypeShape EntityType="chocanonModel.provider" Width="1.5" PointX="0.875" PointY="2.875" />
+        <EntityTypeShape EntityType="chocanonModel.service" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="chocanonModel.FK_bill_info_member" />
+        <AssociationConnector Association="chocanonModel.FK_bill_info_provider" />
+        <AssociationConnector Association="chocanonModel.FK_bill_info_service" />
+        <AssociationConnector Association="chocanonModel.FK_eft_provider" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

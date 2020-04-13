@@ -26,6 +26,7 @@ namespace ChocoholicsPortal
 
         ProviderFunctions _providerFuncs = new ProviderFunctions();
         OperatorFunctions _operatorFuncs = new OperatorFunctions();
+        APFunctions _apFuncs = new APFunctions();
 
         public PortalWindow(string userID, bool Provider, bool Manager)
         {
@@ -79,6 +80,13 @@ namespace ChocoholicsPortal
             if (isManager)
             {
                 //Run the process
+
+                _apFuncs.RunAPProcess();
+
+                //generate reports
+
+                _apFuncs.GenerateReports();
+
                 MessageBox.Show("Process Complete");
             }
             else
