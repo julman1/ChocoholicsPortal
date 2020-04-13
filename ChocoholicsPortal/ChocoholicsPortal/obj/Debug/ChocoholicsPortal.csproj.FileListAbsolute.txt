@@ -59,3 +59,5 @@ C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsP
 C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AddProviderWindow.baml
 C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\AlterProviderWindow.baml
 C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.csprojAssemblyReference.cache
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\Interop.ACTIVEXLib.dll
+C:\Users\julie\Documents\GitHub\ChocoholicsPortal\ChocoholicsPortal\ChocoholicsPortal\obj\Debug\ChocoholicsPortal.csproj.ResolveComReference.cache

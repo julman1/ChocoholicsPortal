@@ -83,10 +83,6 @@ namespace ChocoholicsPortal
 
                 _apFuncs.RunAPProcess();
 
-                //generate reports
-
-                _apFuncs.GenerateReports();
-
                 MessageBox.Show("Process Complete");
             }
             else
