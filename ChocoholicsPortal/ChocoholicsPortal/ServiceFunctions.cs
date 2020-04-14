@@ -16,9 +16,10 @@ namespace ChocoholicsPortal
             {
                 return false;
             }
-            //Hit the database to verify
 
-            return true;
+            var intServiceCode = Convert.ToInt32(serviceCode);
+
+            return dbs.service.Where(m => m.ServiceID == intServiceCode).Any();
         }
         public service ReturnSingleServices(string serviceCode)
         {
@@ -27,13 +28,12 @@ namespace ChocoholicsPortal
                 return new service();
             }
 
-            //Hit the database to verify
+            var intServiceCode = Convert.ToInt32(serviceCode);
 
-            return new service();
+            return dbs.service.Where(m => m.ServiceID == intServiceCode).FirstOrDefault();
         }
         public List<service> ReturnAllServices()
         {
-            //Hit the database to get all
             return dbs.service.ToList();
         }
     }

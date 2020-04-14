@@ -55,7 +55,7 @@ namespace ChocoholicsPortal
             goodService = _serviceCheck.CheckTheServiceCode(serviceCodeTextbox.Text);
             if(!goodService)
             {
-                memberIDTextbox.BorderBrush = System.Windows.Media.Brushes.Red;
+                serviceCodeTextbox.BorderBrush = System.Windows.Media.Brushes.Red;
             }
 
             //Verify Date - make sure date not in future
