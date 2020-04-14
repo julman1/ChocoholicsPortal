@@ -14,19 +14,15 @@ namespace ChocoholicsPortal
         chocanonEntities dbs = new chocanonEntities();
         DateTime today = DateTime.Today;
         DateTime lastWeek = DateTime.Today.AddDays(-7);
-
-
+        
         public void RunAPProcess()
         {
-            //dbs.ap_period.Add(new ap_period { EndDate = new DateTime(2020, 4, 10) });
-            //Get Providers
-
-            var WeekProviders = GetWeekProviders();
+            var WeekProviders = GetAPPeriodProviders();
 
             //loop through billing info
             foreach (var item in WeekProviders)
             {
-                var weeklyBilling = GetWeeklyBillingPerProvider(item);
+                var weeklyBilling = GetAPPeriodBillingPerProvider(item);
 
                 var getAPPeriod = dbs.ap_period.Where(m => m.EndDate <= today).Max(m => m.APPeriodID);
 
@@ -43,19 +39,16 @@ namespace ChocoholicsPortal
 
             if (WeekProviders.Count > 0)
             {
-                GenerateReports();
+                GenerateManagerReport();
+                GenerateProviderReport();
+                GenerateMemberReport();
             }
+        }
 
-        }
-        private void GenerateReports()
-        {
-            GenerateManagerReport();
-            GenerateProviderReport();
-            GenerateMemberReport();
-        }
+        #region GenerateReports
         private void GenerateMemberReport()
         {
-            var WeekMembers = GetWeekMembers();
+            var WeekMembers = GetAPPeriodMembers();
 
             foreach (var thisMember in WeekMembers)
             {
@@ -92,7 +85,7 @@ namespace ChocoholicsPortal
                 buildString.AppendLine(thisMember.City + ", " + thisMember.State + " " + thisMember.Zip);
                 buildString.AppendLine();
 
-                var billings = GetWeekBill_infoByMember(thisMember);
+                var billings = GetAPPeriodBill_infoByMember(thisMember);
 
                 document.Content.Text = buildString.ToString();
 
@@ -164,7 +157,7 @@ namespace ChocoholicsPortal
         }
         private void GenerateProviderReport()
         {
-            var WeekProviders = GetWeekProviders();
+            var WeekProviders = GetAPPeriodProviders();
 
             foreach (var thisProvider in WeekProviders)
             {
@@ -201,7 +194,7 @@ namespace ChocoholicsPortal
                 buildString.AppendLine(thisProvider.City + ", " + thisProvider.State + " " + thisProvider.Zip);
                 buildString.AppendLine();
 
-                var billings = GetWeekBill_infoByProvider(thisProvider);
+                var billings = GetAPPeriodkBill_infoByProvider(thisProvider);
 
                 document.Content.Text = buildString.ToString();
 
@@ -307,11 +300,11 @@ namespace ChocoholicsPortal
                             }
                             else if (cell.ColumnIndex == 2)
                             {
-                                cell.Range.Text = GetWeeklyConsulationsPerProvider(thisProvider).ToString();
+                                cell.Range.Text = GetAPPeriodConsulationsPerProvider(thisProvider).ToString();
                             }
                             else
                             {
-                                cell.Range.Text = "$" + GetWeeklyBillingPerProvider(thisProvider).ToString();
+                                cell.Range.Text = "$" + GetAPPeriodBillingPerProvider(thisProvider).ToString();
                             }
                         }
                     }
@@ -343,7 +336,7 @@ namespace ChocoholicsPortal
                 + dbs.ap_period.Where(m => m.EndDate <= today).Max(m => m.APPeriodID)
                 + ".docx";
 
-            var WeekProviders = GetWeekProviders();
+            var WeekProviders = GetAPPeriodProviders();
 
             //Create a new document  
             Microsoft.Office.Interop.Word.Application winword = new Microsoft.Office.Interop.Word.Application();
@@ -400,11 +393,11 @@ namespace ChocoholicsPortal
                         }
                         else if (cell.ColumnIndex == 2)
                         {
-                            cell.Range.Text = GetWeeklyConsulationsPerProvider(thisProvider).ToString();
+                            cell.Range.Text = GetAPPeriodConsulationsPerProvider(thisProvider).ToString();
                         }
                         else
                         {
-                            cell.Range.Text = "$" + GetWeeklyBillingPerProvider(thisProvider).ToString();
+                            cell.Range.Text = "$" + GetAPPeriodBillingPerProvider(thisProvider).ToString();
                         }
                     }
                 }
@@ -450,11 +443,11 @@ namespace ChocoholicsPortal
                         }
                         else if (cell.ColumnIndex == 3)
                         {
-                            cell.Range.Text = GetWeeklyConsulations().ToString();
+                            cell.Range.Text = GetAPPeriodConsulations().ToString();
                         }
                         else
                         {
-                            cell.Range.Text = "$" + GetWeeklyBilling().ToString();
+                            cell.Range.Text = "$" + GetAPPeriodBilling().ToString();
                         }
                     }
                 }
@@ -479,45 +472,48 @@ namespace ChocoholicsPortal
             winword.Quit();
             winword = null;
         }
-        private List<provider> GetWeekProviders()
+        #endregion
+        
+        #region Report Qrys
+        private List<provider> GetAPPeriodProviders()
         {
             return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek)
                 .Select(m => m.provider).Distinct()
                 .ToList();
         }
-        private List<member> GetWeekMembers()
-        {
-            return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek)
-                .Select(m => m.member).Distinct()
-                .ToList();
-        }
-        private List<bill_info> GetWeekBill_infoByProvider(provider singleProvider)
+        private List<bill_info> GetAPPeriodkBill_infoByProvider(provider singleProvider)
         {
             return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek
                 && m.ProviderID == singleProvider.ProviderID)
                 .ToList();
         }
-        private List<bill_info> GetWeekBill_infoByMember(member singleMember)
+        private double? GetAPPeriodBillingPerProvider(provider singleProvider)
+        {
+            return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek
+                    && m.ProviderID == singleProvider.ProviderID).Sum(m => m.service.ServiceCost);
+        }
+        private double? GetAPPeriodConsulationsPerProvider(provider singleProvider)
+        {
+            return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek
+                    && m.ProviderID == singleProvider.ProviderID).Count();
+        }
+        private List<member> GetAPPeriodMembers()
+        {
+            return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek)
+                .Select(m => m.member).Distinct()
+                .ToList();
+        }
+        private List<bill_info> GetAPPeriodBill_infoByMember(member singleMember)
         {
             return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek
                 && m.MemberID == singleMember.MemberID)
                 .ToList();
         }
-        private double? GetWeeklyBillingPerProvider(provider singleProvider)
-        {
-            return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek
-                    && m.ProviderID == singleProvider.ProviderID).Sum(m => m.service.ServiceCost);
-        }
-        private double? GetWeeklyConsulationsPerProvider(provider singleProvider)
-        {
-            return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek
-                    && m.ProviderID == singleProvider.ProviderID).Count();
-        }
-        private double? GetWeeklyBilling()
+        private double? GetAPPeriodBilling()
         {
             return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek).Sum(m => m.service.ServiceCost);
         }
-        private double? GetWeeklyConsulations()
+        private double? GetAPPeriodConsulations()
         {
             return dbs.bill_info.Where(m => m.ServiceDate <= today && m.ServiceDate >= lastWeek).Count();
         }
@@ -525,5 +521,6 @@ namespace ChocoholicsPortal
         {
             dbs.eft.Add(newEft);
         }
+        #endregion
     }
 }
