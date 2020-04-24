@@ -127,5 +127,12 @@ namespace ChocoholicsPortal
             var alterWindow = new AlterProviderWindow();
             alterWindow.Show();
         }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            var loginw = new MainWindow();
+            loginw.Show();
+            this.Close();
+        }
     }
 }

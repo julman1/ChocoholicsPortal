@@ -18,6 +18,7 @@
         <Label x:Name="label_Copy6" Content="Zip" HorizontalAlignment="Left" Height="30" Margin="146,324,0,0" VerticalAlignment="Top" Width="125"/>
         <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
         <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="287,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
         <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="287,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
         <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="23" Margin="287,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
         <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="23" Margin="287,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
@@ -25,7 +26,6 @@
         <TextBox x:Name="ZipTextBox" HorizontalAlignment="Left" Height="23" Margin="287,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
         <Button x:Name="button" Content="Add" Margin="242,0,224,39" VerticalAlignment="Bottom" Click="Button_Click"/>
         <Label x:Name="label_Copy7" Content="Member Last Name" HorizontalAlignment="Left" Height="30" Margin="146,127,0,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="287,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
 
     </Grid>
 </Window>

@@ -9,23 +9,23 @@
     <Grid Background="#FF5C7BA8">
         <Rectangle Fill="White" Margin="44,70,29,10" Stroke="Black"/>
         <Label x:Name="label" Content="Add Provider" Height="44" Margin="212,21,172,0" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="22"/>
-        <Label x:Name="label_Copy" Content="Member First Name:" HorizontalAlignment="Left" Height="30" Margin="139,97,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy1" Content="Member Phone" HorizontalAlignment="Left" Height="30" Margin="139,154,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy2" Content="Member Email" HorizontalAlignment="Left" Height="30" Margin="139,184,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="label_Copy3" Content="Member Address" HorizontalAlignment="Left" Height="30" Margin="139,219,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy" Content="Provider First Name:" HorizontalAlignment="Left" Height="30" Margin="139,97,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy1" Content="Provider Phone" HorizontalAlignment="Left" Height="30" Margin="139,154,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy2" Content="Provider Email" HorizontalAlignment="Left" Height="30" Margin="139,184,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="label_Copy3" Content="Provider Address" HorizontalAlignment="Left" Height="30" Margin="139,219,0,0" VerticalAlignment="Top" Width="125"/>
         <Label x:Name="label_Copy4" Content="City" HorizontalAlignment="Left" Height="30" Margin="139,254,0,0" VerticalAlignment="Top" Width="125"/>
         <Label x:Name="label_Copy5" Content="State" HorizontalAlignment="Left" Height="30" Margin="139,289,0,0" VerticalAlignment="Top" Width="125"/>
         <Label x:Name="label_Copy6" Content="Zip" HorizontalAlignment="Left" Height="30" Margin="139,324,0,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="287,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="23" Margin="287,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="23" Margin="287,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="StateTextBox" HorizontalAlignment="Left" Height="23" Margin="287,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="ZipTextBox" HorizontalAlignment="Left" Height="23" Margin="287,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
-        <Button x:Name="button" Content="Add" Margin="242,0,224,39" VerticalAlignment="Bottom" Click="Button_Click"/>
-        <Label x:Name="label_Copy7" Content="Member Last Name" HorizontalAlignment="Left" Height="30" Margin="139,127,0,0" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="287,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="FirstNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TabIndex="0"/>
+        <TextBox x:Name="LastNameTextbox" HorizontalAlignment="Left" Height="23" Margin="287,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"  TabIndex="1"/>
+        <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Height="23" Margin="287,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"  TabIndex="4"/>
+        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="23" Margin="287,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"  TabIndex="5"/>
+        <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="23" Margin="287,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TabIndex="6"/>
+        <TextBox x:Name="StateTextBox" HorizontalAlignment="Left" Height="23" Margin="287,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"  TabIndex="7"/>
+        <TextBox x:Name="ZipTextBox" HorizontalAlignment="Left" Height="23" Margin="287,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"  TabIndex="8"/>
+        <Button x:Name="button" Content="Add" Margin="242,0,224,39" VerticalAlignment="Bottom" Click="Button_Click"  TabIndex="9"/>
+        <Label x:Name="label_Copy7" Content="Provider Last Name" HorizontalAlignment="Left" Height="30" Margin="139,127,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Height="23" Margin="287,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"  TabIndex="2"/>
 
     </Grid>
 </Window>

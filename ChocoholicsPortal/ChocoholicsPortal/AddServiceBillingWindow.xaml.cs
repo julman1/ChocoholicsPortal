@@ -56,6 +56,7 @@ namespace ChocoholicsPortal
             if(!goodService)
             {
                 serviceCodeTextbox.BorderBrush = System.Windows.Media.Brushes.Red;
+                return;
             }
 
             //Verify Date - make sure date not in future
@@ -75,7 +76,7 @@ namespace ChocoholicsPortal
                 newBill.MemberID = Convert.ToInt32(memberIDTextbox.Text);
                 newBill.ProviderID = Convert.ToInt32(ProviderID);
                 newBill.ServiceID = Convert.ToInt32(serviceCodeTextbox.Text);
-                newBill.ExpectedCost = Convert.ToDecimal(CostTextbox.Text);
+                newBill.ExpectedCost = (!string.IsNullOrEmpty(CostTextbox.Text)) ? Convert.ToDecimal(CostTextbox.Text) : 0;
                 newBill.Notes = CommentsTextBox.Text;
 
                 //Insert into database
